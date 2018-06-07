@@ -13,14 +13,17 @@ public class Character{
     private int currentStamina;
     private int maxStamina;
     private int popularity;
-
+    private int motivation;//(0-100) 0-20= unmotivated, 21-40= wavered, 41-60 = neutral, 61-80 = motivated, 81-90 = driven, 91-100= on fire
 
     //Skill ( 0 to *)
     private int vocal;
     private int expression;
     private int dance;
 
-    //
+    //Appeal
+    private int fiery;
+    private int coolish;
+    private int calming;
 
     //work ( -50 to 50)
     private int confidence; //negative = timid, positive = confident
@@ -35,7 +38,17 @@ public class Character{
         lastName= last;
         maxStamina = 100;
     }
-
+    public int Motivation
+    {
+        get
+        {
+            return motivation;
+        }
+        set
+        {
+            motivation = value;
+        }
+    }
     public string StageName
     {
         get
