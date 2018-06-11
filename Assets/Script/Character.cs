@@ -15,7 +15,7 @@ public class Character{
     private int popularity;
     private int motivation;//(0-100) 0-20= unmotivated, 21-40= wavered, 41-60 = neutral, 61-80 = motivated, 81-90 = driven, 91-100= on fire
 
-    //Skill ( 0 to *)
+    //Skill ( 1 to 9999)
     private int vocal;
     private int expression;
     private int dance;
@@ -96,4 +96,120 @@ public class Character{
         }
     }
 
+    public int Vocal
+    {
+        get
+        {
+            return vocal;
+        }
+
+        set
+        {
+            vocal = value;
+        }
+    }
+
+    public int Expression
+    {
+        get
+        {
+            return expression;
+        }
+
+        set
+        {
+            expression = value;
+        }
+    }
+
+    public int Dance
+    {
+        get
+        {
+            return dance;
+        }
+
+        set
+        {
+            dance = value;
+        }
+    }
+
+    public int Fiery
+    {
+        get
+        {
+            return fiery;
+        }
+
+        set
+        {
+            fiery = value;
+        }
+    }
+
+    public int Coolish
+    {
+        get
+        {
+            return coolish;
+        }
+
+        set
+        {
+            coolish = value;
+        }
+    }
+
+    public int Calming
+    {
+        get
+        {
+            return calming;
+        }
+
+        set
+        {
+            calming = value;
+        }
+    }
+
+    public int Confidence
+    {
+        get
+        {
+            return confidence;
+        }
+
+        set
+        {
+            confidence = value;
+        }
+    }
+
+    public int Ethic
+    {
+        get
+        {
+            return ethic;
+        }
+
+        set
+        {
+            ethic = value;
+        }
+    }
+
+    public int Social
+    {
+        get
+        {
+            return social;
+        }
+
+        set
+        {
+            social = value;
+        }
+    }
 }
