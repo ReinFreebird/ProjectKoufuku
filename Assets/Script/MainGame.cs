@@ -4,32 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MainGame : MonoBehaviour {
 
-    //CharcaterInfo
-    [SerializeField]
     public GameObject w_characterInfo;
-    [SerializeField]
-    public GameObject w_characterStatus;
-    public Text t_days;
-    public Text t_currentStamina;
-    public Text t_maxStamina;
-    public Image i_stamina;
-    public Text t_motivationNumber;
-    public Image i_motivationNumber;
-    public Text t_health;
-    public Image i_health;
-    public Text t_money;
-    public Text t_popularityNumber;
-
-
-
-    [SerializeField]
+    public GameObject w_playerStatus;
     public GameObject w_schedule;
+    public GameObject w_menu;
     
 
     public static Character character;
+    public static Player player;
 	// Use this for initialization
 	void Start () {
-        
+        character = new Character("Miyuki", "Fukuroune");
+        character.StageName = "MIYUKI";
+        character.Popularity = 2000;
+        character.Motivation = 100;
+        character.Fiery = 3547;
+        character.Coolish = 3259;
+        character.Calming = 3543;
+        character.Vocal = 1250;
+        character.Expression = 850;
+        character.Dance = 500;
+        character.Confidence = 10;
+        character.Ethic = 25;
+        character.Social = 10;
 	}
 	
 	// Update is called once per frame

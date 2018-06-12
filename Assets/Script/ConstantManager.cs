@@ -11,8 +11,9 @@ public static class ConstantManager {
     }
     public enum parameter
     {
+        //15 parameters, character (0-13), player (14)
         Fiery, Coolish, Calming, Vocal, Expression, Dance, Confidence, Ethics, Social,CurrentStamina,MaxStamina,
-        Motivation,Health,Money, 
+        Motivation,Health,Popularity,Money 
     }
     //path to activitySprites, used for when instantiating activity
     public static string[] activityLogoPath =

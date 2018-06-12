@@ -14,7 +14,7 @@ public class Character{
     private int maxStamina;
     private int popularity;
     private int motivation;//(0-100) 0-20= unmotivated, 21-40= wavered, 41-60 = neutral, 61-80 = motivated, 81-90 = driven, 91-100= on fire
-
+    private int health;//(0-100)
     //Skill ( 1 to 9999)
     private int vocal;
     private int expression;
@@ -34,8 +34,8 @@ public class Character{
 
     public Character(string first, string last)
     {
-        firstName = first;
-        lastName= last;
+        FirstName = first;
+        LastName= last;
         maxStamina = 100;
     }
     public int Motivation
@@ -95,7 +95,6 @@ public class Character{
             popularity = value;
         }
     }
-
     public int Vocal
     {
         get
@@ -108,7 +107,6 @@ public class Character{
             vocal = value;
         }
     }
-
     public int Expression
     {
         get
@@ -121,7 +119,6 @@ public class Character{
             expression = value;
         }
     }
-
     public int Dance
     {
         get
@@ -134,7 +131,6 @@ public class Character{
             dance = value;
         }
     }
-
     public int Fiery
     {
         get
@@ -147,7 +143,6 @@ public class Character{
             fiery = value;
         }
     }
-
     public int Coolish
     {
         get
@@ -160,7 +155,6 @@ public class Character{
             coolish = value;
         }
     }
-
     public int Calming
     {
         get
@@ -173,7 +167,6 @@ public class Character{
             calming = value;
         }
     }
-
     public int Confidence
     {
         get
@@ -186,7 +179,6 @@ public class Character{
             confidence = value;
         }
     }
-
     public int Ethic
     {
         get
@@ -199,7 +191,6 @@ public class Character{
             ethic = value;
         }
     }
-
     public int Social
     {
         get
@@ -211,5 +202,55 @@ public class Character{
         {
             social = value;
         }
+    }
+    public int Health
+    {
+        get
+        {
+            return health;
+        }
+
+        set
+        {
+            health = value;
+        }
+    }
+
+    public string FirstName
+    {
+        get
+        {
+            return firstName;
+        }
+
+        set
+        {
+            firstName = value;
+        }
+    }
+
+    public string LastName
+    {
+        get
+        {
+            return lastName;
+        }
+
+        set
+        {
+            lastName = value;
+        }
+    }
+
+    public string[] GetStrings()
+    {
+        string[] arrayString= { FirstName, LastName, stageName };
+        return arrayString;
+    }
+    public int[] GetInts()
+    {
+        int[] intString= { fiery,coolish,calming,vocal,expression,dance,confidence,ethic,social,currentStamina,maxStamina
+        ,motivation,health,popularity};
+        return intString;
     }
 }
