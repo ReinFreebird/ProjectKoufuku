@@ -27,6 +27,13 @@ public class MainGame : MonoBehaviour {
         character.Confidence = 10;
         character.Ethic = 25;
         character.Social = 10;
+
+        character.CurrentStamina = 75;
+        character.MaxStamina = 120;
+        character.Health = 95;
+        player = new Player();
+        player.Money = 1000;
+        player.Days = 12;
 	}
 	
 	// Update is called once per frame

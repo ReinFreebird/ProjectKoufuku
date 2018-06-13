@@ -45,7 +45,7 @@ public class CharacterInfoHandler : MonoBehaviour {
         t_stageName.text= character.StageName;
         t_realName.text = character.FirstName + " " + character.LastName;
         t_popularity.text = character.Popularity.ToString();
-        t_motivation.text= character.Motivation.ToString();
+        t_motivation.text= GetMotivation();
         t_idolLevel.text= GetIdolLevel();
         t_personality.text=GetPersonality();
         //Appeal
@@ -96,5 +96,32 @@ public class CharacterInfoHandler : MonoBehaviour {
     string GetPersonality()
     {
         return "Bland";
+    }
+    string GetMotivation()
+    {
+        string mot;
+        int motInt = character.Motivation;
+        if (motInt<=20)
+        {
+            mot = "Unmotivated";
+        }else if (motInt <= 40)
+        {
+            mot = "Wavered";
+        }else if (motInt<=60)
+        {
+            mot = "Neutral";
+        }else if (motInt <= 80)
+        {
+            mot = "Motivated";
+        }else if (motInt <= 90)
+        {
+            mot = "Driven";
+        }
+        else
+        {
+            mot = "On Fire";
+        }
+
+        return mot;
     }
 }
