@@ -14,8 +14,49 @@ public class ActivityContent : MonoBehaviour {
     // Use this for initialization
 
     public Activity activity;
+
+    public Image I_activityLogo
+    {
+        get
+        {
+            return i_activityLogo;
+        }
+
+        set
+        {
+            i_activityLogo = value;
+        }
+    }
+
+    public Text T_activityName
+    {
+        get
+        {
+            return t_activityName;
+        }
+
+        set
+        {
+            t_activityName = value;
+        }
+    }
+
+    public Text T_activityAttribute
+    {
+        get
+        {
+            return t_activityAttribute;
+        }
+
+        set
+        {
+            t_activityAttribute = value;
+        }
+    }
+
     public void setCharacter(Activity act)
     {
         activity = act;
     }
+    
 }

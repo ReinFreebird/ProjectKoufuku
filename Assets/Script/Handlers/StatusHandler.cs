@@ -28,6 +28,7 @@ public class StatusHandler : MonoBehaviour {
     }
     public void updatePlayerStatus()
     {
+        /*
         Vector3 temp;
         t_days.text = player.Days.ToString();
         //Stamina
@@ -54,5 +55,6 @@ public class StatusHandler : MonoBehaviour {
         //Player
         t_days.text = player.Days.ToString();
         t_money.text = player.Money.ToString();
+        */
     }
 }

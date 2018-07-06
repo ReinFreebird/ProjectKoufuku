@@ -35,10 +35,14 @@ public class CharacterInfoHandler : MonoBehaviour {
     private Player player;
     private Character character;
     // Use this for initialization
-    void Start () {
+    void Awake()
+    {
         player = MainGame.player;
         character = MainGame.character;
         updateCharacterInfo();
+    }
+    void Start () {
+        
 	}
 	public void updateCharacterInfo()
     {

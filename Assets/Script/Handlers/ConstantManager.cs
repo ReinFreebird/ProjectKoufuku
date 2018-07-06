@@ -6,7 +6,7 @@ public static class ConstantManager {
 
     public enum activity
     {
-        VocalTraining, ExpressionTraining, DanceTraining,
+        VocalTraining, ExpressionTraining, DanceTraining,FlyerHandouts,Volunteer,Hangout,Rest
 
     }
     public enum parameter

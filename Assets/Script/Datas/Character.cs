@@ -38,6 +38,16 @@ public class Character{
         LastName= last;
         maxStamina = 100;
     }
+    public Character()
+    {
+
+    }
+    public Character (int[] intList,string[] stringList)
+    {
+
+    }
+
+
     public int Motivation
     {
         get
