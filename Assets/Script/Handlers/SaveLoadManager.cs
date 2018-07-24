@@ -8,7 +8,7 @@ public static class SaveLoadManager{
     public static void saveData(Player player,Character character,int savenum)
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = new FileStream(Application.persistentDataPath + "/save" + savenum + ".sav", FileMode.Create);
+        FileStream file = new FileStream(Application.dataPath + "/savefiles/save" + savenum + ".sav", FileMode.Create);
         Debug.Log(Application.persistentDataPath);
         SaveData data = new SaveData(savenum,player, character);
 
@@ -17,14 +17,15 @@ public static class SaveLoadManager{
     }
     public static SaveData loadData(int loadnum)
     {
-        if (File.Exists(Application.persistentDataPath + "/save" + loadnum + ".sav"))
+        if (File.Exists(Application.dataPath + "/savefiles/save" + loadnum + ".sav"))
         {
+            Debug.Log("it's real");
             SaveData data;
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = new FileStream(Application.persistentDataPath + "/save" + loadnum + ".sav", FileMode.Open);
+            FileStream file = new FileStream(Application.dataPath + "/savefiles/save" + loadnum + ".sav", FileMode.Open);
 
             data = bf.Deserialize(file) as SaveData;
-
+            Debug.Log(data.days+" days");
             file.Close();
             return data;
         }
@@ -38,7 +39,7 @@ public static class SaveLoadManager{
         List<SaveData> saveDatas = new List<SaveData>();
         for (int i = 1; i <= 5; i++)
         {
-            if (File.Exists(Application.persistentDataPath + "/save" + i + ".sav"))
+            if (File.Exists(Application.dataPath + "/savefiles/save" + i + ".sav"))
             {
                 saveDatas.Add(loadData(i));
             }

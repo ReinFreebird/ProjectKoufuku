@@ -16,6 +16,7 @@ public class MainGame : MonoBehaviour {
     private ScheduleHandler s_schedule;
     public GameObject w_menu;
     public GameObject w_saveload;
+    public GameObject w_popup;
     private SaveLoadHandler s_saveload;
 
     public static Character character;
@@ -27,6 +28,7 @@ public class MainGame : MonoBehaviour {
     public bool b_characterInfo=false;
     public bool b_schedule=false;
     public bool b_saveload = false;
+    public bool b_popup = false;
     void Awake()
     {
         
@@ -37,11 +39,8 @@ public class MainGame : MonoBehaviour {
 
         //debugData();
         /*uncoment to make new file*/
-
-        currentSave = SaveLoadManager.loadData(1);
-        //currentSave = SaveLoadManager.loadData(1);
-        player = currentSave.GetPlayer();
-        character = currentSave.GetCharacter();
+        loadData(SaveLoadManager.loadData(1));
+        
     }
     private void debugData()
     {
@@ -82,6 +81,7 @@ public class MainGame : MonoBehaviour {
         w_playerStatus.SetActive(b_playerStatus);
         w_characterInfo.SetActive(b_characterInfo);
         w_saveload.SetActive(b_saveload);
+        w_popup.SetActive(b_popup);
         //SaveLoadManager.saveData(player, character, 1);
 	}
 	
@@ -94,24 +94,29 @@ public class MainGame : MonoBehaviour {
      * 0=main (disable all)
      * 1=characterInfo
      * 2=schedule
-     *
+     * 3=saveLoad
      */
     {
         w_characterInfo.SetActive(false);
         w_playerStatus.SetActive(true);
         w_schedule.SetActive(false);
+        w_menu.SetActive(true);
+        w_saveload.SetActive(false);
         switch (index)
         {
             case 0:
                 break;
-            case 1:
-                
+            case 1:        
                 w_characterInfo.SetActive(true);
                 s_characterInfo.updateCharacterInfo();
                 w_playerStatus.SetActive(false);
                 break;
             case 2:
                 w_schedule.SetActive(true);
+                break;
+            case 3:
+                w_saveload.SetActive(true);
+                w_menu.SetActive(false);
                 break;
         }
     }
@@ -124,7 +129,7 @@ public class MainGame : MonoBehaviour {
     {
         w_schedule.GetComponent<ScheduleHandler>().startActivity(index);
         //w_characterInfo.GetComponent<CharacterInfoHandler>().updateCharacterInfo();
-        w_playerStatus.GetComponent<StatusHandler>().updatePlayerStatus();
+        w_playerStatus.GetComponent<StatusHandler>().updatePlayerStatus(currentSave);
     }
     public void resetSchedule()
     {
@@ -146,8 +151,20 @@ public class MainGame : MonoBehaviour {
         }
         resetSchedule();
         player.Days++;
-        s_playerStatus.updatePlayerStatus();
+        s_playerStatus.updatePlayerStatus(currentSave);
         //s_characterInfo.updateCharacterInfo();
 
+    }
+    public void resetDisplay()
+    {
+        Debug.Log("resetDisplay called");
+        s_playerStatus.updatePlayerStatus(currentSave);
+
+    }
+    public void loadData(SaveData dt)
+    {
+        currentSave = dt;
+        player = currentSave.GetPlayer();
+        character = currentSave.GetCharacter();
     }
 }

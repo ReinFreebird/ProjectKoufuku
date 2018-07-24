@@ -22,13 +22,13 @@ public class StatusHandler : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        player = MainGame.player;
-        character = MainGame.character;
-        updatePlayerStatus();
+        updatePlayerStatus(MainGame.currentSave);
     }
-    public void updatePlayerStatus()
+    public void updatePlayerStatus(SaveData save)
     {
-        /*
+        Debug.Log("entered updateStatus");
+        player = save.GetPlayer();
+        character = save.GetCharacter();
         Vector3 temp;
         t_days.text = player.Days.ToString();
         //Stamina
@@ -54,7 +54,6 @@ public class StatusHandler : MonoBehaviour {
         t_popularity.text = character.Popularity.ToString();
         //Player
         t_days.text = player.Days.ToString();
-        t_money.text = player.Money.ToString();
-        */
+        t_money.text = player.Money.ToString();   
     }
 }

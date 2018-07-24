@@ -7,13 +7,16 @@ public class SaveLoadHandler : MonoBehaviour{
     public GameObject pref_saveFile;
     public GameObject c_saveList;
     public GameObject w_popup;
+    public GameObject w_maingame;
     private PopupHandler s_popup;
     private List<GameObject> b_saveList;
     private List<SaveData> saveDatas;
+    private MainGame s_maingame;
+    
     /*saveNum=index+1
      * save1= saveDatas[0]
      */
-    private bool isSave=false;
+    private bool isSave=true;
     private int selectData;
     public bool IsSave
     {
@@ -36,6 +39,7 @@ public class SaveLoadHandler : MonoBehaviour{
     void Start () {
         updateSaveList();
         toggleSaveLoad(IsSave);
+        s_maingame = w_maingame.GetComponent<MainGame>();
 	}
     public void updateSaveList()
     {
@@ -132,10 +136,17 @@ public class SaveLoadHandler : MonoBehaviour{
         {
             SaveLoadManager.saveData(MainGame.player, MainGame.character, selectData);
             updateSaveList();
+            s_popup.notify("Save complete");
+
         }
         else
         {
-            SaveLoadManager.loadData(selectData);
+            s_maingame.loadData(SaveLoadManager.loadData(selectData));
+            
+            s_maingame.openWindow(0);
+            s_maingame.resetDisplay();
+            s_popup.notify("Load complete");
+            
         }
     }
     public void confirmSaveLoad(bool yes)
@@ -144,7 +155,10 @@ public class SaveLoadHandler : MonoBehaviour{
         {
             saveLoadPopupPress(isSave);
         }
-        w_popup.SetActive(false);
+        else
+        {
+            w_popup.SetActive(false);
+        }
     }
 
 }

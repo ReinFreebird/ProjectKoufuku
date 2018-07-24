@@ -12,6 +12,25 @@ public class SaveLoadToggle : MonoBehaviour, ISelectHandler{
     {
         w_saveload = GameObject.FindGameObjectWithTag("SaveLoad");
         s_saveload = w_saveload.GetComponent<SaveLoadHandler>();
+        if (this.gameObject.name.Contains("Save"))
+        {
+            this.gameObject.GetComponent<Button>().interactable = true;
+        }
+        if (this.gameObject.name.Contains("Load"))
+        {
+            this.gameObject.GetComponent<Button>().interactable = false;
+        }
+        if (s_saveload.IsSave)
+        {
+            if (this.gameObject.name.Contains("Save"))
+            {
+                this.gameObject.GetComponent<Button>().interactable = false;
+            }
+            if (this.gameObject.name.Contains("Load"))
+            {
+                this.gameObject.GetComponent<Button>().interactable = true;
+            }
+        }
     }
     public void OnSelect(BaseEventData eventData)
     {
@@ -23,8 +42,7 @@ public class SaveLoadToggle : MonoBehaviour, ISelectHandler{
         }
         s_saveload.IsSave = false;
         if (selectedObject.name.Contains("Save"))
-        {
-            
+        {            
             s_saveload.IsSave = true;
         }
         s_saveload.toggleSaveLoad(s_saveload.IsSave);
