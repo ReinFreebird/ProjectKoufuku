@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Login.unity
     guid: 158f257cc097c244da0c6673da56abdd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Prolouge.unity
     guid: 632702972448ca54a8fef9a191333125
   m_configObjects: {}

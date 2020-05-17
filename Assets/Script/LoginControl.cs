@@ -28,26 +28,26 @@ public class LoginControl : MonoBehaviour {
     [DllImport("__Internal")]
     private static extern void InsertJWToken(string token);
 
-    [DllImport("__Internal")]
-    private static extern string GetUserName();
 
     [DllImport("__Internal")]
-    private static extern string GetUserEmail();
+    private static extern void Logout();
+
+    [DllImport("__Internal")]
+    private static extern string GetUserData();
+
+
+    
 
 	// Use this for initialization
 	void Start () {
-		/*
+		
         #if UNITY_EDITOR
-        Debug.Log("Unity Editor");
-        w_mainSection.SetActive(true);
+        loggedInMenu("ayayaya|yes.com");
         #else
-        */
-            w_mainSection.SetActive(true);
-            Debug.Log(GetUserName());
-            
-        /*
+        
+            loggedInMenu(GetUserData());
         #endif
-        */
+        
     
     
 	}
@@ -57,6 +57,19 @@ public class LoginControl : MonoBehaviour {
 		
 	}
 
+    public void loggedInMenu(string data){
+        if(data==null|| data==""){
+            w_mainSection.SetActive(true);
+            w_loggedInSection.SetActive(false);
+        }else{
+            w_mainSection.SetActive(false);
+            w_loggedInSection.SetActive(true);
+
+            string[] parseString= data.Split('|');
+            Debug.Log(parseString[1]);
+            t_loggedInData.text="Logged In As "+parseString[0]+" "+parseString[1];
+        }
+    }
     public void toggleLogin (bool isLogin){
         if(isLogin){
             w_registerSection.SetActive(false);
@@ -79,7 +92,8 @@ public class LoginControl : MonoBehaviour {
         }else if(!confirmPassword.Equals(password)){
             Debug.Log("Password does not match");
         }else{
-            StartCoroutine(register(userName,email,password));
+            StartCoroutine(registerEnum(userName,email,password));
+            loggedInMenu(userName+"|"+email);
         }
 
         
@@ -88,12 +102,13 @@ public class LoginControl : MonoBehaviour {
         string email= i_login_email.text;
         string password= i_login_password.text;
 
-        StartCoroutine(login(email,password));
-        
-
-        
+        StartCoroutine(loginEnum(email,password));
     }
-    IEnumerator login(string email, string password){
+
+    public void newGame(){
+        o_scene_manager.changeSceneWithLoading(1);
+    }
+    IEnumerator loginEnum(string email, string password){
         //API URL
         string loginURL= "http://localhost:7000/api/v1/auth/login";
 
@@ -112,7 +127,7 @@ public class LoginControl : MonoBehaviour {
 
         
     }
-    IEnumerator register(string name,string email, string password){
+    IEnumerator registerEnum(string name,string email, string password){
         //API URL
         string registerURL= "http://localhost:7000/api/v1/auth/register";
 
@@ -132,6 +147,25 @@ public class LoginControl : MonoBehaviour {
         InsertJWToken(token);
 
         
+    }
+    public void logout(){
+
+        #if UNITY_EDITOR
+        loggedInMenu(null);
+        #else
+        
+            StartCoroutine(logoutEnum());
+        #endif
+        
+        
+
+        
+    }
+    IEnumerator logoutEnum(){
+        
+        Logout();
+        yield return new WaitForSeconds((float)0.5);
+        loggedInMenu(null);
     }
 
 

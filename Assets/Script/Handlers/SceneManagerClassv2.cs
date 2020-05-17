@@ -9,6 +9,7 @@ public class SceneManagerClassv2:MonoBehaviour {
 	public Text loadingText;
 	AsyncOperation loading;
 	public void changeSceneWithLoading(int i){
+		tintScreen.SetActive (true);
 		StartCoroutine (changeSceneWithLoadingEnum (i));
 	}
 	public void changeSceneWithLoadingPC(int scene){
@@ -25,7 +26,7 @@ public class SceneManagerClassv2:MonoBehaviour {
 		loading.allowSceneActivation = false;
 		while (!loading.isDone) {
 			if (loading.progress == 0.9f) {
-				loadingText.text = "Tap to continue";
+				loadingText.text = "Click to continue";
 				if (Input.GetMouseButtonDown(0)) {
 					tintScreen.gameObject.GetComponent<Image> ().DOColor (new Color(0,0,0,1f),0.75f);
 					yield return new WaitForSeconds (1f);

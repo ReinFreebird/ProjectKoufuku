@@ -1,0 +1,174 @@
+!
+F#Tint_Sprite#0,black,false
+15th May 20XX
+"House of the Singing Owls"
+You just came home after a long day at work.
+F#Fade_In_From_Black#1,false
+As you open the door, a figure emerge to welcome you.
+F#Transation_Sprite_X_Position#0,0,true
+F#Play_Music#0
+F#Tint_Sprite#0,clear,false
+!Miyuki
+Welcome home, Master
+How was your day?
+!
+This is Miyuki, one of the resident in your home.
+She's a bright, gentle and caring girl.
+An absolute angel
+!Miyuki
+You must be very tired from your work.
+Let me take your jacket off you.
+F#Tint_Sprite#0,black,false
+!Mizuo
+Miyuki, is that Master you're talking to?
+F#Tint_Sprite#0,clear,false
+!Miyuki
+Yes, Master just came home.
+F#Tint_Sprite#0,black,false
+!Mizuo
+Welcome back.
+!
+Mizuo, another one of the resident in your home, who is also Miyuki's brother.
+F#Tint_Sprite#0,clear,false
+!Miyuki
+Mizuo is on the kitchen right now. He's preparing food for our dinner.
+!
+Mizuo is cooking currently as it seems.
+!Miyuki
+We're having his speciality tonight, Spaghetti with Tomato Sauce.
+And also, the shower is ready. You can clean yourself up first while Mizuo and I setup up our dinner
+F#Clear_Box#
+F#Transation_Sprite_X_Position#0,500,true
+!
+And so, you headed to the shower
+F#Clear_Box#
+F#Fade_Out_To_Black#1,false
+15 Minutes Later
+F#Clear_Box#
+F#Fade_In_From_Black#1,false
+F#Tint_Sprite#1,black,false
+You walk out of the shower
+F#Transation_Sprite_X_Position#1,0,true
+Someone has already been waiting for you
+F#Tint_Sprite#1,clear,false
+!Mizuo
+Oh, you're done.
+Here, your clothes.
+!
+Unlike Miyuki, he has an intimidating aura around him, and often scare peoples away.
+The way he interacts with people, could be said as blunt to put it mildly.
+!Mizuo
+You should wear them right away, you don't wanna be walking around naked, especially at these hours.
+Miyuki would worry like hell if you ended up catching a cold.
+!
+Despite his tough exterior, his more attentive nature is what people would point out about him.
+It is an endearing trait of his.
+!Mizuo
+Dinner is already done, Miyuki's waiting for us at the dining table.
+I'll be joining her now.
+F#Clear_Box#
+F#Transation_Sprite_X_Position#1,500,true
+!
+And so you were left alone to put on your clothes
+You joined Miyuki and Mizuo shortly afterwards.
+F#Tint_Sprite#0,black,false
+F#Tint_Sprite#1,black,false
+F#Transation_Sprite_X_Position#0,-150,false
+F#Transation_Sprite_X_Position#1,150,true
+F#Tint_Sprite#0,clear,false
+!Miyuki
+Time to eat!
+F#Tint_Sprite#0,black,false
+!
+And so, you start eating the food Mizuo prepared 
+As Miyuki said before, you are having spaghetti for dinner.
+It is still steaming hot, not a long time has passed since the food finished being cooked
+You take your first bite, using a fork
+The chewiness of the spaghetti is complimented perfectly by the acidity of the handmade tomato sauce.
+Your tongue felt a warm and tangy taste every bite you take.
+It's undeniable, the spaghetti is the perfect food for dinner, especially after a long day at work.
+It didn't took long for Miyuki to finish her food.
+F#Tint_Sprite#0,clear,false
+!Miyuki
+Thank you for the food.
+F#Tint_Sprite#0,black,false
+F#Tint_Sprite#1,clear,false
+!Mizuo
+That was awfully quick.
+F#Tint_Sprite#1,black,false
+F#Tint_Sprite#0,clear,false
+!Miyuki
+I can't help it, the spaghetti tasted so good
+F#Tint_Sprite#0,black,false
+F#Tint_Sprite#1,clear,false
+!Mizuo
+I'm glad that you like it, but remember to chew next time
+You don't wanna accidentally choke yourself.
+F#Tint_Sprite#1,black,false
+F#Tint_Sprite#0,clear,false
+!Miyuki
+Okay
+F#Tint_Sprite#0,black,false
+!
+Miyuki really like the spaghetti that Mizuo made
+Can't really be helped, the spaghetti tasted really good.
+You and Mizuo continue finishing our food
+F#Tint_Sprite#1,clear,false
+!Mizuo
+Anyway, Master. Have you looked at the news from this afternoon?
+The airport is packed with peoples wanting to go for a trip.
+F#Tint_Sprite#1,black,false
+F#Tint_Sprite#0,clear,false
+!Miyuki
+Oh, I heard about the news to when I went Neru's house today
+She was planning to go somewhere for holiday too.
+But after she heard of the news, she became a bit doubtful that she'll be going for a vacation anytime soon.
+F#Tint_Sprite#0,black,false
+F#Tint_Sprite#1,clear,false
+!Mizuo
+Well, It's understandable that she became at least sceptical.
+We weren't suppose to go anywhere far, at least until the government allow us to.
+By the looks of it, those people don't realize how dangerous it is to do so right now.
+F#Tint_Sprite#1,black,false
+F#Tint_Sprite#0,clear,false
+!Miyuki
+But it's sad really, people really are getting frustrated after staying in their home for too long
+I guess some people can't help themselves
+F#Tint_Sprite#0,black,false
+F#Tint_Sprite#1,clear,false
+!Mizuo
+That may be true, but I still can't understand why they would do as much as risking their and others' safety just for them to go for a trip at this kind of time.
+It just sickens me a lot
+!
+Mizuo clearly frustrated as well, you looked at him rubbing his own face to calm himself down
+F#Tint_Sprite#1,clear,false
+!Mizuo
+...
+I'm sorry.
+I guess it also has affected me in a way too.
+F#Tint_Sprite#1,black,false
+F#Tint_Sprite#0,clear,false
+!Miyuki
+Well, why don't we plan ourself on a vacation? Ofcourse we'll only go after everthing is calmed down.
+We haven't got a time to go somewhere, even before these whole situation started.
+I mean, at these times it's good to have something to look forward to, right?
+F#Tint_Sprite#0,black,false
+F#Tint_Sprite#1,clear,false
+!Mizuo
+I guess so, yeah.
+F#Tint_Sprite#1,black,false
+F#Tint_Sprite#0,clear,false
+!Miyuki
+Great, where do you think we should go?
+F#Fade_Out_To_Black#1,false
+!
+And so, you continue your conversation with Miyuki and Mizuo
+It may not be much, but having them in your house keeps you a friendly company in a crisis like this
+It's still a long way before everything could go back normal
+But you're hopeful, that everything will turnout for the better.
+THE END
+Special Thanks to: Vhayoung for the sprites of Miyuki and Mizuo created so many years ago
+Background is created by UNCLE MUGEN as a free asset for all
+Music credit goes to who ever created it
+Hope to see you again soon in Project Koufuku
+-ReinFreebird, 2020
